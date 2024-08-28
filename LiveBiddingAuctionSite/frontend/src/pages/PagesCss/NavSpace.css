@@ -1,0 +1,12 @@
+.navSpace{
+    width: 100%;
+    height: 64px;
+    background-color: #6D3D0C;
+    position: sticky;
+}
+
+@media (width<500px) {
+    .navSpace{
+        height : 128px;
+    }
+}

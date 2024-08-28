@@ -1,0 +1,25 @@
+.Art{
+    background: url("../images/artBackground.png") center/cover;
+}
+
+.Real-Estate{
+    background: url("../images/realEstateBackground.png") center/cover;
+}
+
+.Jewelry{
+    background: url("../images/jewellaryBackground.png") center/cover;
+}
+
+.Antiques{
+    background: url("../images/antiquesBackground.png") center/cover;
+}
+
+.Cars{
+    background: url("../images/carsBackground.png") center/cover;
+}
+
+@media (width<500px) {
+    nav.eventsNavBar{
+        margin-top: 128px;
+    }
+}

@@ -1,0 +1,62 @@
+.browse{
+    z-index: -1;
+    opacity: 0.40;
+    animation: browseHide 0.5s ease;
+}
+ 
+section.active .browse{
+    transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(21vw);
+    animation: 
+    browseAni 0.5 ease,
+    goBackBrowse 0.5s ease;
+}
+/* These animations are used to show the 3d navbar effect */
+@keyframes browseAni {
+    0%{
+        transform: translate(0);
+    }
+    5%{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(25vw);
+    }
+    100%{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(21vw);
+    }
+}
+@keyframes browseHide {
+    0%{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(21vw);
+    }
+    95%{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(25vw);
+    }
+    100%{
+        transform: translate(0);
+    }
+}
+section.active .browse.hover{
+    transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(30vw);
+    animation: bringFwdBrowse 0.5s ease;
+    z-index: 6;
+    opacity: 1;
+} 
+/* These animations are used to cycle through the windows */
+@keyframes bringFwdBrowse {
+    from{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(21vw);
+        opacity: 0.40;
+    }
+    to{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(30vw);
+        opacity: 1;
+    }
+}
+@keyframes goBackBrowse {
+    from{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(30vw);
+        opacity: 1;
+    }
+    to {
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(21vw);
+        opacity: 0.40;
+    }
+}

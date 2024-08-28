@@ -1,0 +1,63 @@
+.events{
+    z-index: -2;
+    opacity: 0.35;
+    animation: eventsHide 0.5s ease;
+    overflow-y: auto;
+}
+
+section.active .events{
+    transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(17vw);
+    animation: 
+    eventsAni 0.5s ease,
+    goBackEvents 0.5s ease;
+}
+/* These animations are used to show the 3d navbar effect */
+@keyframes eventsAni {
+    0%{
+        transform: translate(0);
+    }
+    5%{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(25vw);
+    }
+    100%{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(17vw);
+    }
+}
+@keyframes eventsHide {
+    0%{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(17vw);
+    }
+    95%{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(25vw);
+    }
+    100%{
+        transform: translate(0);
+    }
+}
+section.active .events.hover{
+    transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(30vw);
+    animation: bringFwdEvents 0.5s ease;
+    z-index: 6;
+    opacity: 1;
+} 
+/* These animations are used to cycle through the windows */
+@keyframes bringFwdEvents {
+    from{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(17vw);
+        opacity: 0.35;
+    }
+    to{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(30vw);
+        opacity: 1;
+    }
+}
+@keyframes goBackEvents {
+    from{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(30vw);
+        opacity: 1;
+    }
+    to {
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(17vw);
+        opacity: 0.35;
+    }
+}

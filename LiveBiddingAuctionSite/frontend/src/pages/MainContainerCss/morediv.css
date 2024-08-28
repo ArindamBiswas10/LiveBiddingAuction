@@ -1,0 +1,61 @@
+/* These are just extra windows that we may need if we add more pages */
+
+.about{
+    z-index: -4;
+    opacity: 0.25;
+    animation: aboutHide 0.5s ease;
+}
+section.active .about{
+    transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(9vw);
+    animation: 
+    aboutAni 0.5s ease,
+    goBackAbout 0.5s ease;
+}
+@keyframes aboutAni {
+    0%{
+        transform: translate(0);
+    }
+    5%{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(25vw);
+    }
+    100%{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(9vw);
+    }
+}
+@keyframes aboutHide {
+    0%{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(9vw);
+    }
+    95%{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(25vw);
+    }
+    100%{
+        transform: translate(0);
+    }
+}
+section.active .about.hover{
+    transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(30vw);
+    animation: bringFwdAbout 0.5s ease;
+    opacity: 1;
+    z-index: 6;
+} 
+@keyframes bringFwdAbout {
+    from{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(9vw);
+        opacity: 0.25;
+    }
+    to{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(30vw);
+        opacity: 1;
+    }
+}
+@keyframes goBackAbout {
+    from{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(30vw);
+        opacity: 1;
+    }
+    to {
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(9vw);
+        opacity: 0.25;
+    }
+}

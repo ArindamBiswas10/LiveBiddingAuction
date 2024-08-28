@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #151515;
+    background-image: linear-gradient(135deg , #393533d9 0%, #151515b0 74%);
+    overflow-x: hidden;
+    transform-style: preserve-3d;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3rem;
+    z-index: 10;
+}
+
+menu {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background-color: #11182788;
+}
+
+menu div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+menu div img{
+    width: 4rem;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 4rem;
+    color: #a97767;
+}
+
+.logo span {
+    font-weight: 300;
+    color: #DC7A18;
+}
+
+.signin, .signup, .profile, .logout {
+    border: 2px solid #CA7016;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    margin: 0 0.5rem;
+    color: #DC7A18;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.signin:hover, .signup:hover, .profile:hover, .logout:hover {
+    background-color: #CA7016;
+    color: #472602;
+    transition: 0.2s;
+}
+
+.hamburger-menu {
+    height: 4rem;
+    width: 3rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar {
+    width: 1.9rem;
+    height: 1.5px;
+    border-radius: 2px;
+    background-color: #935210;
+    position: relative;
+    transition: 0.5s;
+}
+
+.bar::before,
+.bar::after {
+    content: "";
+    width: inherit;
+    height: inherit;
+    background-color: #CA7016;
+    position: absolute;
+    transition: 0.5s;
+}
+
+.bar::before {
+    transform: translateY(-9px);
+}
+
+.bar::after {
+    transform: translateY(9px);
+}
+
+section.active .bar {
+    transform: rotate(1turn);
+    background-color: transparent;
+}
+
+section.active .bar::before {
+    transform: translateY(0) rotate(45deg);
+}
+
+section.active .bar::after {
+    transform: translateY(0) rotate(-45deg);
+}
+
+.browse, .events, .about{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transform-style: preserve-3d;
+    transform-origin: left;
+    background-color: #f3f4f6;
+    overflow-y: auto;
+}
+
+#curr{
+    z-index: 6;
+    opacity: 1;
+    animation: load 0.5s ease;
+}
+ 
+/* Here load animation works to load the selected link forward  */
+
+@keyframes load {
+    from {
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(30vw);
+    }
+    to {
+        transform: translate(0);
+    }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}

@@ -1,0 +1,23 @@
+.achievementsElement-0 div{
+    text-align: center;
+    border-radius: 0.5rem;
+    background:  url("../images/achievementsElement-0.png") center/cover;
+}
+
+.achievementsElement-1 div{
+    text-align: center;
+    border-radius: 0.5rem;
+    background:  url("../images/achievementsElement-1.png") center/cover;
+}
+
+.achievementsElement-2 div{
+    text-align: center;
+    border-radius: 0.5rem;
+    background:  url("../images/achievementsElement-2.png") center/cover;
+}
+
+.achievementsElement-3 div{
+    text-align: center;
+    border-radius: 0.5rem;
+    background:  url("../images/achievementsElement-3.png") center/cover;
+}

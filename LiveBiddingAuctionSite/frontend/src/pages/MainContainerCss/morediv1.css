@@ -1,0 +1,62 @@
+/* These are just extra windows that we may need if we add more pages */
+.contact{
+    z-index: -5;
+    opacity: 0.20;
+    animation: contactHide 0.5s ease;
+}
+
+section.active .contact{
+    transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(5vw);
+    animation: 
+    contactAni 0.5s ease,
+    goBackContact 0.5s ease;
+}
+@keyframes contactAni {
+    0%{
+        transform: translate(0);
+    }
+    5%{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(25vw);
+    }
+    100%{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(5vw);
+    }
+}
+@keyframes contactHide {
+    0%{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(5vw);
+    }
+    95%{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(25vw);
+    }
+    100%{
+        transform: translate(0);
+    }
+}
+section.active .contact.hover{
+    transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(30vw);
+    animation: bringFwdContact 0.5s ease;
+    z-index: 6;
+    opacity: 1;
+} 
+
+@keyframes bringFwdContact {
+    from{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(5vw);
+        opacity: 0.20;
+    }
+    to{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(30vw);
+        opacity: 1;
+    }
+}
+@keyframes goBackContact {
+    from{
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(30vw);
+        opacity: 1;
+    }
+    to {
+        transform: perspective(1300px) rotateY(20deg) scale(0.5) translateZ(5vw);
+        opacity: 0.20;
+    }
+}
